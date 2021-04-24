@@ -125,8 +125,6 @@ extension ListOfReposVC: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "GitHubRepoTableViewCell") as! GitHubRepoTableViewCell
         
-        tableView.dequeueReusableCell(withIdentifier: "GitHubRepoTableViewCell")
-        
         let repo = repos[indexPath.item]
         
         cell.repoName.text = repo.name
@@ -134,5 +132,15 @@ extension ListOfReposVC: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let repo = repos[indexPath.item]
+        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = mainStoryboard.instantiateViewController(withIdentifier: "DetailsRepoVC") as! DetailsRepoVC
+        
+        controller.repo = repo
+        
+        navigationController?.pushViewController(controller, animated: true)
+        
+    }
 }

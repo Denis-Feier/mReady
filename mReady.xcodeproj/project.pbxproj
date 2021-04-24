@@ -22,6 +22,7 @@
 		FFB7482426346344004847B6 /* GithubRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB7482326346344004847B6 /* GithubRepo.swift */; };
 		FFB74829263464D7004847B6 /* OwnerRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB74828263464D7004847B6 /* OwnerRepo.swift */; };
 		FFB74830263469AC004847B6 /* GitHubRepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB7482F263469AC004847B6 /* GitHubRepoTableViewCell.swift */; };
+		FFB74839263477B2004847B6 /* DetailsRepoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB74838263477B2004847B6 /* DetailsRepoVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		FFB7482326346344004847B6 /* GithubRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepo.swift; sourceTree = "<group>"; };
 		FFB74828263464D7004847B6 /* OwnerRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerRepo.swift; sourceTree = "<group>"; };
 		FFB7482F263469AC004847B6 /* GitHubRepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepoTableViewCell.swift; sourceTree = "<group>"; };
+		FFB74838263477B2004847B6 /* DetailsRepoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRepoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,11 +149,11 @@
 		FFB747C126344F7E004847B6 /* mReady */ = {
 			isa = PBXGroup;
 			children = (
+				FFB7483726347781004847B6 /* VC */,
 				FFB7482D26346975004847B6 /* Views */,
 				FFB74822263462DC004847B6 /* Model */,
 				FFB747C226344F7E004847B6 /* AppDelegate.swift */,
 				FFB747C426344F7E004847B6 /* SceneDelegate.swift */,
-				FFB747C626344F7E004847B6 /* ListOfReposVC.swift */,
 				FFB747C826344F7E004847B6 /* Main.storyboard */,
 				FFB747CB26344F80004847B6 /* Assets.xcassets */,
 				FFB747CD26344F80004847B6 /* LaunchScreen.storyboard */,
@@ -194,6 +196,15 @@
 				FFB7482F263469AC004847B6 /* GitHubRepoTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		FFB7483726347781004847B6 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				FFB747C626344F7E004847B6 /* ListOfReposVC.swift */,
+				FFB74838263477B2004847B6 /* DetailsRepoVC.swift */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -437,6 +448,7 @@
 				FFB7480E26345C57004847B6 /* SpinnerViewController.swift in Sources */,
 				FFB74830263469AC004847B6 /* GitHubRepoTableViewCell.swift in Sources */,
 				FFB747C726344F7E004847B6 /* ListOfReposVC.swift in Sources */,
+				FFB74839263477B2004847B6 /* DetailsRepoVC.swift in Sources */,
 				FFB7482426346344004847B6 /* GithubRepo.swift in Sources */,
 				FFB74829263464D7004847B6 /* OwnerRepo.swift in Sources */,
 				FFB747C326344F7E004847B6 /* AppDelegate.swift in Sources */,
