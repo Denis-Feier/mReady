@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class ListOfReposVC: UIViewController {
 
@@ -15,12 +16,16 @@ class ListOfReposVC: UIViewController {
     @IBOutlet weak var prevBtn: UIButton!
     @IBOutlet weak var pageLable: UILabel!
     
-    var currentPage: Int = 0
+    var currentPage: Int = 1
     var spinner: SpinnerViewController? = SpinnerViewController()
+    
+    var repos: [GithubRepo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        listOfRepo.delegate = self
+        listOfRepo.dataSource = self
         nextBtn.addTarget(self, action: #selector(nextTapped), for: .touchUpInside)
         prevBtn.addTarget(self, action: #selector(prevTapped), for: .touchUpInside)
     }
@@ -28,6 +33,7 @@ class ListOfReposVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setButtons()
+        getRepoFromApi()
     }
     
     @objc fileprivate func nextTapped() {
@@ -43,7 +49,7 @@ class ListOfReposVC: UIViewController {
     }
     
     fileprivate func setNextBtn() {
-        if currentPage == 99 {
+        if currentPage == 100 {
             nextBtn.isHidden = true
         } else {
             nextBtn.isHidden = false
@@ -51,7 +57,7 @@ class ListOfReposVC: UIViewController {
     }
     
     fileprivate func setPrevBtn() {
-        if currentPage == 0 {
+        if currentPage == 1 {
             prevBtn.isHidden = true
         } else {
             prevBtn.isHidden = false
@@ -66,7 +72,7 @@ class ListOfReposVC: UIViewController {
     }
     
     fileprivate func setPageLabel() {
-        pageLable.text = "Page \(currentPage + 1)"
+        pageLable.text = "Page \(currentPage)"
     }
     
     
@@ -82,7 +88,7 @@ class ListOfReposVC: UIViewController {
         }
     }
     
-    fileprivate func getRepoFromApi(page: Int = 0) {
+    fileprivate func getRepoFromApi(page: Int = 1) {
 
         showSpinner()
         
@@ -92,7 +98,14 @@ class ListOfReposVC: UIViewController {
             self.dismissSpinner()
             switch response.result {
                 case .success(let data):
-                    print(data)
+                    let json = JSON(data)
+                    self.repos = []
+                    for element in json["items"].arrayValue {
+                        self.repos.append(GithubRepo(json: element))
+                    }
+                    DispatchQueue.main.async {
+                        self.listOfRepo.reloadData()
+                    }
                 case .failure(let err):
                     print(err)
             }
@@ -105,11 +118,21 @@ class ListOfReposVC: UIViewController {
 extension ListOfReposVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return repos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GitHubRepoTableViewCell") as! GitHubRepoTableViewCell
+        
+        tableView.dequeueReusableCell(withIdentifier: "GitHubRepoTableViewCell")
+        
+        let repo = repos[indexPath.item]
+        
+        cell.repoName.text = repo.name
+        cell.repoStars.text = "\(repo.stargazers_count)"
+        
+        return cell
     }
     
 }

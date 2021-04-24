@@ -19,6 +19,9 @@
 		FFB747DA26344F81004847B6 /* mReadyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB747D926344F81004847B6 /* mReadyTests.swift */; };
 		FFB747E526344F81004847B6 /* mReadyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB747E426344F81004847B6 /* mReadyUITests.swift */; };
 		FFB7480E26345C57004847B6 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB7480D26345C57004847B6 /* SpinnerViewController.swift */; };
+		FFB7482426346344004847B6 /* GithubRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB7482326346344004847B6 /* GithubRepo.swift */; };
+		FFB74829263464D7004847B6 /* OwnerRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB74828263464D7004847B6 /* OwnerRepo.swift */; };
+		FFB74830263469AC004847B6 /* GitHubRepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB7482F263469AC004847B6 /* GitHubRepoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,9 @@
 		FFB747E426344F81004847B6 /* mReadyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mReadyUITests.swift; sourceTree = "<group>"; };
 		FFB747E626344F81004847B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFB7480D26345C57004847B6 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
+		FFB7482326346344004847B6 /* GithubRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepo.swift; sourceTree = "<group>"; };
+		FFB74828263464D7004847B6 /* OwnerRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerRepo.swift; sourceTree = "<group>"; };
+		FFB7482F263469AC004847B6 /* GitHubRepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,8 @@
 		FFB747C126344F7E004847B6 /* mReady */ = {
 			isa = PBXGroup;
 			children = (
+				FFB7482D26346975004847B6 /* Views */,
+				FFB74822263462DC004847B6 /* Model */,
 				FFB747C226344F7E004847B6 /* AppDelegate.swift */,
 				FFB747C426344F7E004847B6 /* SceneDelegate.swift */,
 				FFB747C626344F7E004847B6 /* ListOfReposVC.swift */,
@@ -148,7 +156,6 @@
 				FFB747CB26344F80004847B6 /* Assets.xcassets */,
 				FFB747CD26344F80004847B6 /* LaunchScreen.storyboard */,
 				FFB747D026344F80004847B6 /* Info.plist */,
-				FFB7480D26345C57004847B6 /* SpinnerViewController.swift */,
 			);
 			path = mReady;
 			sourceTree = "<group>";
@@ -169,6 +176,24 @@
 				FFB747E626344F81004847B6 /* Info.plist */,
 			);
 			path = mReadyUITests;
+			sourceTree = "<group>";
+		};
+		FFB74822263462DC004847B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FFB7482326346344004847B6 /* GithubRepo.swift */,
+				FFB74828263464D7004847B6 /* OwnerRepo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FFB7482D26346975004847B6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FFB7480D26345C57004847B6 /* SpinnerViewController.swift */,
+				FFB7482F263469AC004847B6 /* GitHubRepoTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,7 +435,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFB7480E26345C57004847B6 /* SpinnerViewController.swift in Sources */,
+				FFB74830263469AC004847B6 /* GitHubRepoTableViewCell.swift in Sources */,
 				FFB747C726344F7E004847B6 /* ListOfReposVC.swift in Sources */,
+				FFB7482426346344004847B6 /* GithubRepo.swift in Sources */,
+				FFB74829263464D7004847B6 /* OwnerRepo.swift in Sources */,
 				FFB747C326344F7E004847B6 /* AppDelegate.swift in Sources */,
 				FFB747C526344F7E004847B6 /* SceneDelegate.swift in Sources */,
 			);

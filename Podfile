@@ -8,6 +8,8 @@ target 'mReady' do
   # Pods for mReady
   
   pod 'Alamofire', '~> 5.2'
+  pod 'SwiftyJSON', '~> 4.0'
+
 
   target 'mReadyTests' do
     inherit! :search_paths
